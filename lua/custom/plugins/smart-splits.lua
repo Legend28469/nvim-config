@@ -1,7 +1,7 @@
 return {
   {
     'mrjones2014/smart-splits.nvim',
-    opts = true,
+    opts = {},
     lazy = false,
     keys = {
       -- Resizing splits
