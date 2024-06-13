@@ -10,6 +10,11 @@
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
+  -- Don't notify that the setup was changed after saving
+  change_detection = {
+    notify = false,
+  },
+
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
