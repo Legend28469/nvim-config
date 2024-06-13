@@ -59,4 +59,17 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Create an autocommand to modify formatoptions for all file types
+-- Basically just don't want comment.nvim to assume my next line is a comment when using o
+vim.api.nvim_create_autocmd('FileType', {
+  -- Apply to all file types
+  pattern = '*',
+  -- Callback function to modify formatoptions
+  callback = function()
+    -- Remove 'o' from formatoptions
+    -- 'o' automatically inserts the current comment leader after hitting 'o' or 'O' in Normal mode
+    vim.opt_local.formatoptions:remove 'o'
+  end,
+})
+
 -- vim: ts=2 sts=2 sw=2 et
